@@ -318,3 +318,33 @@ a:link {
   background: black;
   animation: second 60s infinite linear;
 }
+
+/* Profile */
+
+.Profile__container {
+  display: flex;
+  height: 500px;
+  width: 800px;
+}
+.Profile__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+.Profile__body h1 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 72px;
+  text-align: center;
+  letter-spacing: -0.015em;
+}
+.Profile__body p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: -0.015em;
+}
