@@ -1,16 +1,88 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
+import Logo from "../assets/krugerlogo.png"
 
 const NavBarComponent = () => {
+//   const linkState = (isActive) => {
+//     let color = "545e6f";
+//     let textDecoration = "None";
+//     if (isActive) {      
+//       textDecoration = "Underline";
+//     } else {
+//       textDecoration = "none";
+//     }
+//     return { color, textDecoration };
+//   };
   return (
     <div className="NavBar__container">
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/">INMC Calculator</NavLink>
-      <NavLink to="/">Age Calculator</NavLink>
-      <NavLink to="/">My Clock</NavLink>
-      <NavLink to="/about">About me</NavLink>
-      <NavLink to="/contact">Contact</NavLink>
+      <div className="NavBar__wrapper">
+        <NavLink
+          className="Navbar__link"
+          style={({ isActive }) => ({
+            color: isActive ? '#545e6f' : '#000',
+            textDecoration: isActive?'Underline':'none'  
+          })}
+          to="/"
+        >
+          Home
+        </NavLink>
+        <NavLink
+          className="Navbar__link"
+          style={({ isActive }) => ({
+            color: isActive ? '#545e6f' : '#000',
+            textDecoration: isActive?'Underline':'none'     
+          })}
+          to=""
+        >
+          IMC Calculator
+        </NavLink> 
+        <NavLink
+          className="Navbar__link"
+          style={({ isActive }) => ({
+            color: isActive ? '#545e6f' : '#000',
+            textDecoration: isActive?'Underline':'none'     
+          })}
+          to=""
+        >
+          Age Calculator
+        </NavLink>
+        <div className="NavBar__title">
+            <img className="NavBar__image" src={Logo} alt="logo" />
+            <p className="NavBar__name">
+                KrugerStar
+            </p>
+        </div>
+        <NavLink
+          className="Navbar__link"
+          style={({ isActive }) => ({
+            color: isActive ? '#545e6f' : '#000',
+            textDecoration: isActive?'Underline':'none'     
+          })}
+          to=""
+        >
+          My Clock
+        </NavLink>
+        <NavLink
+          className="Navbar__link"
+          style={({ isActive }) => ({
+            color: isActive ? '#545e6f' : '#000',
+            textDecoration: isActive?'Underline':'none'     
+          })}
+          to="/about"
+        >
+          About me
+        </NavLink>
+        <NavLink
+          className="Navbar__link"
+          style={({ isActive }) => ({
+            color: isActive ? '#545e6f' : '#000',
+            textDecoration: isActive?'Underline':'none'     
+          })}
+          to="/contact"
+        >
+          Contact
+        </NavLink>
+      </div>
     </div>
   );
 };
