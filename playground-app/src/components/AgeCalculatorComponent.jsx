@@ -32,8 +32,8 @@ const AgeCalculatorComponent = () => {
     setD(dias);
   };
   return (
-    <div className="card-container">
-      <div className="card-body">
+    <div className="AgeCalculator__card-container">
+      <div className="AgeCalculator__card-body">
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <DatePicker
             value={value}
@@ -41,27 +41,27 @@ const AgeCalculatorComponent = () => {
               setValue(newValue.$d);
               getEdad(newValue.$d);
             }}
-            renderInput={(params) => <TextField sx={{ backgroundColor: 'white' }} {...params} />}
+            renderInput={(params) => <TextField sx={{ width:'500px', backgroundColor: '#D9D9D9' }} {...params} />}
           />
         </LocalizationProvider>
-        <Button color="primary" variant="contained">
-          Calcular
+        <Button sx={{ width:'223', height:'53px', border:'40px', backgroundColor: '#D9D9D9' ,color:'#000' }} variant="contained">
+          Calculate
         </Button>
-      </div>
-      <div className="card-footer">
-        <div className="card-item">
-          <p> {a}</p>
-          <p> Años</p>
+      </div> 
+      <div className="AgeCalculator__card-footer">
+        <div className="AgeCalculator__card-item">
+          <p className="AgeCalculator__card-item-nums"> {a}</p>
+          <p className="AgeCalculator__card-item-letter"> Años</p>
         </div>
-        <div className="card-item">
-          <p> {m}</p>
-          <p> Meses</p>
+        <div className="AgeCalculator__card-item">
+          <p className="AgeCalculator__card-item-nums"> {m}</p>
+          <p className="AgeCalculator__card-item-letter"> Meses</p>
         </div>
-        <div className="card-item">
-          <p> {d}</p>
-          <p> Días</p>
+        <div className="AgeCalculator__card-item">
+          <p className="AgeCalculator__card-item-nums"> {d}</p>
+          <p className="AgeCalculator__card-item-letter"> Días</p>
         </div>
-      </div>
+      </div>          
     </div>
   );
 }
