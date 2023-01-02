@@ -18,7 +18,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/imc" element={<ImcCalculatorComponent />} />
           <Route path="/age" element={<AgeCalculatorComponent />} />
-          <Route path="/clock" element={<MyClockComponent />} />
+          <Route path="/clock" element={<MyClockComponent timeZone={'America/Bogota'}/>} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
