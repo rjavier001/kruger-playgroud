@@ -32,7 +32,7 @@ const NavBarComponent = () => {
             color: isActive ? '#545e6f' : '#000',
             textDecoration: isActive?'Underline':'none'     
           })}
-          to=""
+          to="/imc"
         >
           IMC Calculator
         </NavLink> 
@@ -42,7 +42,7 @@ const NavBarComponent = () => {
             color: isActive ? '#545e6f' : '#000',
             textDecoration: isActive?'Underline':'none'     
           })}
-          to=""
+          to="/age"
         >
           Age Calculator
         </NavLink>
@@ -58,7 +58,7 @@ const NavBarComponent = () => {
             color: isActive ? '#545e6f' : '#000',
             textDecoration: isActive?'Underline':'none'     
           })}
-          to=""
+          to="/clock"
         >
           My Clock
         </NavLink>
