@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, Grid, TextField, Typography } from "@mui/material";
+import { Button, Card, CardContent, Grid, TextField } from "@mui/material";
 import React from "react";
 
 const ContactComponent = () => {
@@ -9,21 +9,12 @@ const ContactComponent = () => {
         </h1>
         <Grid>
           <Card
-            style={{ maxWidth: 450, padding: "20px 5px", margin: "0 auto" }}
+            style={{ height:450,maxWidth: 450, padding: " 5px", margin: "0 auto" }}
           >
-            <CardContent>
-              <Typography gutterBottom variant="h5">
-               Lets Connect!
-              </Typography>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-                component="p"
-                gutterBottom
-              >
-                Fill up the form and i wil will get back to you within 24
-                hours.
-              </Typography>
+            <CardContent>          
+              <h4>
+              Lets Connect!
+              </h4>              
               <form>
                 <Grid container spacing={1}>
                   <Grid xs={12} sm={6} item>
@@ -68,7 +59,7 @@ const ContactComponent = () => {
                     <TextField
                       label="Message"
                       multiline
-                      rows={4}
+                      rows={2}
                       placeholder="Type your message here"
                       variant="outlined"
                       fullWidth
