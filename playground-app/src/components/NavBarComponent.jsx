@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import Logo from "../assets/krugerlogo.png";
+// import Logo from "../assets/krugerlogo.png";
 
 const NavBarComponent = () => {
   const [click, setClick] = useState(false);
