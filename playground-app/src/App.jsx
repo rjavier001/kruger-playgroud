@@ -11,9 +11,10 @@ import MyClockComponent from "./components/MyClockComponent";
 
 function App() {
   return (
-    <div className="App">
+    <div className="">
       <Router>
         <NavBarComponent />
+        <div className="App">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/imc" element={<ImcCalculatorComponent />} />
@@ -22,6 +23,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
+        </div>        
         <FooterComponent />
       </Router>
     </div>

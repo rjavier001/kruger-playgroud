@@ -1,88 +1,90 @@
-import React from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import Logo from "../assets/krugerlogo.png"
+import Logo from "../assets/krugerlogo.png";
 
 const NavBarComponent = () => {
-//   const linkState = (isActive) => {
-//     let color = "545e6f";
-//     let textDecoration = "None";
-//     if (isActive) {      
-//       textDecoration = "Underline";
-//     } else {
-//       textDecoration = "none";
-//     }
-//     return { color, textDecoration };
-//   };
+  const [click, setClick] = useState(false);
+  const handleClick = () => setClick(!click);
+  const Close = () => setClick(false);
+
   return (
-    <div className="NavBar__container">
-      <div className="NavBar__wrapper">
-        <NavLink
-          className="Navbar__link"
-          style={({ isActive }) => ({
-            color: isActive ? '#545e6f' : '#000',
-            textDecoration: isActive?'Underline':'none'  
-          })}
-          to="/"
-        >
-          Home
-        </NavLink>
-        <NavLink
-          className="Navbar__link"
-          style={({ isActive }) => ({
-            color: isActive ? '#545e6f' : '#000',
-            textDecoration: isActive?'Underline':'none'     
-          })}
-          to="/imc"
-        >
-          IMC Calculator
-        </NavLink> 
-        <NavLink
-          className="Navbar__link"
-          style={({ isActive }) => ({
-            color: isActive ? '#545e6f' : '#000',
-            textDecoration: isActive?'Underline':'none'     
-          })}
-          to="/age"
-        >
-          Age Calculator
-        </NavLink>
-        <div className="NavBar__title">
-            <img className="NavBar__image" src={Logo} alt="logo" />
-            <p className="NavBar__name">
-                KrugerStar
-            </p>
+    <div>
+      <div className={click ? "main-container" : ""} onClick={() => Close()} />
+      <nav className="navbar" onClick={(e) => e.stopPropagation()}>
+        <div className="nav-container">          
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/"
+                activeClassName="active"
+                className="nav-links"
+                onClick={click ? handleClick : null}
+              >
+                Home
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/imc"
+                activeClassName="active"
+                className="nav-links"
+                onClick={click ? handleClick : null}
+              >
+                IMC Calculator
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/age"
+                activeClassName="active"
+                className="nav-links"
+                onClick={click ? handleClick : null}
+              >
+                Age Calculator
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/clock"
+                activeClassName="active"
+                className="nav-links"
+                onClick={click ? handleClick : null}
+              >
+                My Clock
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/about"
+                activeClassName="active"
+                className="nav-links"
+                onClick={click ? handleClick : null}
+              >
+                About me
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/contact"
+                activeClassName="active"
+                className="nav-links"
+                onClick={click ? handleClick : null}
+              >
+                Contact
+              </NavLink>
+            </li>
+          </ul>
+          <div className="nav-icon" onClick={handleClick}>
+            <i className={click ? "fa fa-times" : "fa fa-bars"}></i>
+          </div>
         </div>
-        <NavLink
-          className="Navbar__link"
-          style={({ isActive }) => ({
-            color: isActive ? '#545e6f' : '#000',
-            textDecoration: isActive?'Underline':'none'     
-          })}
-          to="/clock"
-        >
-          My Clock
-        </NavLink>
-        <NavLink
-          className="Navbar__link"
-          style={({ isActive }) => ({
-            color: isActive ? '#545e6f' : '#000',
-            textDecoration: isActive?'Underline':'none'     
-          })}
-          to="/about"
-        >
-          About me
-        </NavLink>
-        <NavLink
-          className="Navbar__link"
-          style={({ isActive }) => ({
-            color: isActive ? '#545e6f' : '#000',
-            textDecoration: isActive?'Underline':'none'     
-          })}
-          to="/contact"
-        >
-          Contact
-        </NavLink>
-      </div>
+      </nav>
     </div>
   );
 };

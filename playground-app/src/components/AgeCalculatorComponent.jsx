@@ -32,38 +32,54 @@ const AgeCalculatorComponent = () => {
     setD(dias);
   };
   return (
-    <div className="AgeCalculator__card-container">
-      <div className="AgeCalculator__card-body">
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <DatePicker
-            value={value}
-            onChange={(newValue) => {
-              setValue(newValue.$d);
-              getEdad(newValue.$d);
+    <div className="AgeCalculator__container">
+      <div className="AgeCalculator__card-container">
+        <div className="AgeCalculator__card-body">
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DatePicker
+              value={value}
+              onChange={(newValue) => {
+                setValue(newValue.$d);
+                getEdad(newValue.$d);
+              }}
+              renderInput={(params) => (
+                <TextField
+                  sx={{ width: "500px", backgroundColor: "#D9D9D9" }}
+                  {...params}
+                />
+              )}
+            />
+          </LocalizationProvider>
+          <Button
+            sx={{
+              width: "223",
+              height: "53px",
+              border: "40px",
+              backgroundColor: "#D9D9D9",
+              color: "#000",
             }}
-            renderInput={(params) => <TextField sx={{ width:'500px', backgroundColor: '#D9D9D9' }} {...params} />}
-          />
-        </LocalizationProvider>
-        <Button sx={{ width:'223', height:'53px', border:'40px', backgroundColor: '#D9D9D9' ,color:'#000' }} variant="contained">
-          Calculate
-        </Button>
-      </div> 
-      <div className="AgeCalculator__card-footer">
-        <div className="AgeCalculator__card-item">
-          <p className="AgeCalculator__card-item-nums"> {a}</p>
-          <p className="AgeCalculator__card-item-letter"> Años</p>
+            variant="contained"
+          >
+            Calculate
+          </Button>
         </div>
-        <div className="AgeCalculator__card-item">
-          <p className="AgeCalculator__card-item-nums"> {m}</p>
-          <p className="AgeCalculator__card-item-letter"> Meses</p>
+        <div className="AgeCalculator__card-footer">
+          <div className="AgeCalculator__card-item">
+            <p className="AgeCalculator__card-item-nums"> {a}</p>
+            <p className="AgeCalculator__card-item-letter"> Años</p>
+          </div>
+          <div className="AgeCalculator__card-item">
+            <p className="AgeCalculator__card-item-nums"> {m}</p>
+            <p className="AgeCalculator__card-item-letter"> Meses</p>
+          </div>
+          <div className="AgeCalculator__card-item">
+            <p className="AgeCalculator__card-item-nums"> {d}</p>
+            <p className="AgeCalculator__card-item-letter"> Días</p>
+          </div>
         </div>
-        <div className="AgeCalculator__card-item">
-          <p className="AgeCalculator__card-item-nums"> {d}</p>
-          <p className="AgeCalculator__card-item-letter"> Días</p>
-        </div>
-      </div>          
+      </div>
     </div>
   );
-}
+};
 
-export default AgeCalculatorComponent
+export default AgeCalculatorComponent;

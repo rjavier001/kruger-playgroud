@@ -23,7 +23,7 @@ const MyClockComponent = ({ timeZone }) => {
     setInterval(update, 1000);
   });
   return (
-    <div>
+    <div className="MyClock__container">
       <h1>
         {timeZone} - {time}
       </h1>
