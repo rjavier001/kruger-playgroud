@@ -1,12 +1,15 @@
+![Logo](https://krugercorp.com/wp-content/uploads/2022/10/logo-Kruger-Principal.png)
+
 # Kruger Star PLAYGROUND
 
 - In this repository you can find My Portfolio.
 
-<img src='images/rwdport.png'>
+<img src='src/assets/mockup.png'>
 
 ## Built With
 
-- React JS
+
+- React JS 
 - HTML
 - CSS
 - Git
